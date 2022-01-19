@@ -11,6 +11,7 @@ void DrawChangeMenu(bool isHD, bool isFL, bool isTW, double rate) {
     std::string hd = (isHD) ? "Remove HD [o]\n" : "Remove HD []\n"
     std::cout << hd;
     std::string fl = (isFL) ? "Remove FL [o]\n" : "Remove FL []\n";
+    std::cout << fl;
     
 >
 
