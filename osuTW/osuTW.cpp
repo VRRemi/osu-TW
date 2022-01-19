@@ -13,6 +13,7 @@ void DrawChangeMenu(bool isHD, bool isFL, bool isTW, double rate) {
     std::string fl = (isFL) ? "Remove FL [o]\n" : "Remove FL []\n";
     std::cout << fl;
     if (isTW) std::cout << "Timewarp ENABLED [" << rate << "x]\n\n";
+    else std::cout << "Timewarp DISABLED [" << rate << "x]\n\n";
     
 >
 
