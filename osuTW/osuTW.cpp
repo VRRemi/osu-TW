@@ -29,11 +29,11 @@ int main()
     SetConsoleTextAttribute(hConsole, 14);
     HANDLE hProc{ 0 };
     uintptr_t bassBase{};
-    DWORD procId { getProcID(L"osu!.exe") };
-    
-    if (procID) {
-        bassBase =GetModuleBaseAddress(procId, L"bass.dll");
-       hProc = OpenProcess(PROCESS_ALL_ACCESS, NULL, procId);
+    DWORD procId{ getProcId(L"osu!.exe") };
+
+    if (procId) {
+         bassBase =GetModuleBaseAddress(procId, L"bass.dll");
+        hProc = OpenProcess(PROCESS_ALL_ACCESS, NULL, procId);
     }
     else {
         system("CLS");
