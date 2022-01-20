@@ -120,6 +120,7 @@ int main()
                      DrawChangedMenu(isHD, isFL, isTW, TWRate);
                 }
                if (GetAsyncKeyState(VK_NUMPAD9) & 1) { return 0; }
+                   }
     
 
 }
