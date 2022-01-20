@@ -93,6 +93,8 @@ int main()
                      isHD = false;
                      DrawChangedMenu(isHD, isFL, isTW, TWRate);
                 }
+                if (GetAsyncKeyState(VK_NUMPAD3) & 1) { //disable fl
+                }
     }
     
 
