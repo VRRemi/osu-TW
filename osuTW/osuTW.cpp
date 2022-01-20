@@ -43,7 +43,7 @@ int main()
     }
     std::cout << "Initializing Data...\n";
     uintptr_t flAddress{}, hdApproach{}, hdVisible{}, playerOffsets{};
-    
+
     flAddress= findSig(hProc, sigs::loadFlashlight, "xxxxxxxxxxxxx?x????xxx?xxxx?xx?xx??x?x??x");
     playerOffsets= findSig(hProc, sigs::playerOffsets, "xxxxxxx") + 0x7;
     uintptr_t playerPtr1 = findDMAAddy(hProc, playerOffsets, { 0x0 });
