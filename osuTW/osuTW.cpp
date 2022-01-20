@@ -56,6 +56,7 @@ int main()
         _timewarp timewarp;
         timewarp = (_timewarp)(twAddr);*/
         
+    system("CLS");
     
 
 }
