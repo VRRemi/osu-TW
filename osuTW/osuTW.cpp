@@ -117,6 +117,7 @@ int main()
                            system("CLS");
                            std::cout << "Enter timewarp rate: ";
                            std::cin >> TWRate;
+                           DrawChangedMenu(isHD, isFL, isTW, TWRate);
                 }
     }
     
