@@ -39,7 +39,6 @@ int main()
     else {
         system("CLS");
         std::cout << "open osu! first!\n";
-    
     }
 
 }
