@@ -49,7 +49,6 @@ int main()
     uintptr_t playerPtr1 = findDMAAddy(hProc, playerOffsets, { 0x0 });
     hdApproach=findSig(hProc, sigs::hdApproach, "xx??x?xx");
     hdVisible=findSig(hProc, sigs::hdVisible, "x?x????x????xxxx");
-    
     /*twAddr = findSig(hProc, sigs::twFunc, "xxxxxx????xxx?xxx??xx");
         typedef void(__thiscall* _timewarp)(double value);
         _timewarp timewarp;
