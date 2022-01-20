@@ -24,7 +24,7 @@ int main()
     
     int currentMods{};
     SetConsoleTitle(L"OSU EASY GAME");
-    
+
     HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
     SetConsoleTextAttribute(hConsole, 14);
     HANDLE hProc{ 0 };
