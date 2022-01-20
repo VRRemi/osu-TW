@@ -83,6 +83,7 @@ int main()
                 
                 if (GetAsyncKeyState(VK_NUMPAD1) & 1) { //disable hd
                             nop((BYTE*)hdVisible, 2, hProc);
+                            nop((BYTE*)(hdApproach+0x4), 2, hProc); 
     }
     
 
