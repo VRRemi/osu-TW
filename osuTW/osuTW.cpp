@@ -59,7 +59,6 @@ int main()
     std::cout << "NUMPAD1 - DISABLE HD\nNUMPAD2 - ENABLE HD\nNUMPAD3 - DISABLE FL\nNUMPAD4 - ENABLE FL\nNUMPAD5 - ENABLE TW\nNUMPAD6 - DISABLE TW\nNUMPAD9 - PANIC KEY\n";
     while (true) {
         uintptr_t playerPtr = findDMAAddy(hProc, playerPtr1, { 0x0 });
-                uintptr_t async = playerPtr + 0x182;
                 uintptr_t TWaddr = findDMAAddy(hProc, bassBase+ 0x00034268, { 0x8,0x10,0xC,0x40 });
                 ReadProcessMemory(hProc, (LPVOID)(async), &bAsync, sizeof(bAsync), nullptr);
                 
