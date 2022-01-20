@@ -57,6 +57,6 @@ int main()
         timewarp = (_timewarp)(twAddr);*/
         
     system("CLS");
-    
+    std::cout << "osu tw and hdfl remover\n\n";
 
 }
