@@ -30,6 +30,6 @@ int main()
     SetConsoleTextAttribute(hConsole, 14);
     HANDLE hProc{ 0 };
     uintptr_t bassBase{};
-    
+    DWORD procId { getProcID(L"osu!.exe") };
 
 }
