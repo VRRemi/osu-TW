@@ -59,6 +59,8 @@ int main()
     system("CLS");
     std::cout << "osu tw and hdfl remover\n\n";
     std::cout << "Remove HD []\nRemove FL []\nTimewarp DISABLED ["<<TWRate<<"x]\n\n";
+     std::cout << "NUMPAD1 - DISABLE HD\nNUMPAD2 - ENABLE HD\nNUMPAD3 - DISABLE FL\nNUMPAD4 - ENABLE FL\nNUMPAD5 - ENABLE TW\nNUMPAD6 - DISABLE TW\nNUMPAD9 - PANIC KEY\n";
+     
     
 
 }
