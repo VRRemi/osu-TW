@@ -40,7 +40,7 @@ int main()
         system("CLS");
         std::cout << "open osu! first!\n";
         getchar();
-        return0;
+        return 0;
     }
 
 }
