@@ -101,6 +101,7 @@ int main()
                 if (GetAsyncKeyState(VK_NUMPAD4) & 1) { //enable fl
                             patch((BYTE*)flAddress, (BYTE*)"\x55", 1, hProc);
                             isFL = false;
+                            DrawChangedMenu(isHD, isFL, isTW, TWRate);
                 }
     }
     
