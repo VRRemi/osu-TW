@@ -59,62 +59,65 @@ int main()
     std::cout << "NUMPAD1 - DISABLE HD\nNUMPAD2 - ENABLE HD\nNUMPAD3 - DISABLE FL\nNUMPAD4 - ENABLE FL\nNUMPAD5 - ENABLE TW\nNUMPAD6 - DISABLE TW\nNUMPAD9 - PANIC KEY\n";
     while (true) {
         uintptr_t playerPtr = findDMAAddy(hProc, playerPtr1, { 0x0 });
-                uintptr_t TWaddr = findDMAAddy(hProc, bassBase+ 0x00034268, { 0x8,0x10,0xC,0x40 });
-                ReadProcessMemory(hProc, (LPVOID)(async), &bAsync, sizeof(bAsync), nullptr);
-                
-                if (playerPtr != NULL && bAsync) bLoaded = true;
-                else bLoaded = false;
-                
-                writeMem(audioBypass, 0, hProc);
-                
-                if (isTW && bLoaded) {
-                    writeMem(TWaddr, TWRate, hProc);
-                    writeMem(TWaddr+0x8, 1147.0 * TWRate, hProc);
-                }
-                if (!bLoaded) {
-                    writeMem(TWaddr, 1.0, hProc);
-                    writeMem(TWaddr + 0x8, 1147.0, hProc);
-                }
-                
-                if (GetAsyncKeyState(VK_NUMPAD1) & 1) { //disable hd
-                    nop((BYTE*)hdVisible, 2, hProc);
-                    nop((BYTE*)(hdApproach+0x4), 2, hProc); 
-                    isHD = true;
-                    DrawChangedMenu(isHD, isFL, isTW, TWRate);
-                }
-                if (GetAsyncKeyState(VK_NUMPAD2) & 1) { //enable hd
-                     patch((BYTE*)hdVisible, (BYTE*)"\x75\x5F", 2, hProc);
-                     patch((BYTE*)(hdApproach + 0x4), (BYTE*)"\x74\x10",2, hProc);
-                     isHD = false;
-                     DrawChangedMenu(isHD, isFL, isTW, TWRate);
-                }
-                if (GetAsyncKeyState(VK_NUMPAD3) & 1) { //disable fl
-                     patch((BYTE*)flAddress, (BYTE*)"\xC3", 1, hProc);
-                     isFL = true;
-                     DrawChangedMenu(isHD, isFL, isTW, TWRate);
-                }
-                if (GetAsyncKeyState(VK_NUMPAD4) & 1) { //enable fl
-                     patch((BYTE*)flAddress, (BYTE*)"\x55", 1, hProc);
-                     isFL = false;
-                     DrawChangedMenu(isHD, isFL, isTW, TWRate);
-                }
-                if (GetAsyncKeyState(VK_NUMPAD5) & 1) {
-                     isTW = true;
-                     DrawChangedMenu(isHD, isFL, isTW, TWRate);
-                }
-                if (GetAsyncKeyState(VK_NUMPAD6) & 1) {
-                     isTW = false;
-                     DrawChangedMenu(isHD, isFL, isTW, TWRate);
-                     writeMem(TWaddr, 1.0, hProc);
-                     writeMem(TWaddr + 0x8, 1147.0, hProc);
-                }
-                if (GetAsyncKeyState(0x39) & 1) {
-                     system("CLS");
-                     std::cout << "Enter timewarp rate: ";
-                     std::cin >> TWRate;
-                     DrawChangedMenu(isHD, isFL, isTW, TWRate);
-                }
-               if (GetAsyncKeyState(VK_NUMPAD9) & 1) { return 0; }
-                   }
-        return 0;
+        uintptr_t audioBypass = playerPtr + 0x14C;
+        uintptr_t async = playerPtr + 0x182;
+        uintptr_t TWaddr = findDMAAddy(hProc, bassBase+ 0x00034268, { 0x8,0x10,0xC,0x40 });
+        ReadProcessMemory(hProc, (LPVOID)(async), &bAsync, sizeof(bAsync), nullptr);
+
+        if (playerPtr != NULL && bAsync) bLoaded = true;
+        else bLoaded = false;
+
+        writeMem(audioBypass, 0, hProc);
+
+        if (isTW && bLoaded) {
+            writeMem(TWaddr, TWRate, hProc);
+            writeMem(TWaddr+0x8, 1147.0 * TWRate, hProc);
+        }
+        if (!bLoaded) {
+            writeMem(TWaddr, 1.0, hProc);
+            writeMem(TWaddr + 0x8, 1147.0, hProc);
+        }
+
+        if (GetAsyncKeyState(VK_NUMPAD1) & 1) { //disable hd
+            nop((BYTE*)hdVisible, 2, hProc);
+            nop((BYTE*)(hdApproach+0x4), 2, hProc); 
+            isHD = true;
+            DrawChangedMenu(isHD, isFL, isTW, TWRate);
+        }
+        if (GetAsyncKeyState(VK_NUMPAD2) & 1) { //enable hd
+            patch((BYTE*)hdVisible, (BYTE*)"\x75\x5F", 2, hProc);
+            patch((BYTE*)(hdApproach + 0x4), (BYTE*)"\x74\x10",2, hProc);
+            isHD = false;
+            DrawChangedMenu(isHD, isFL, isTW, TWRate);
+        }
+        if (GetAsyncKeyState(VK_NUMPAD3) & 1) { //disable fl
+            patch((BYTE*)flAddress, (BYTE*)"\xC3", 1, hProc);
+            isFL = true;
+            DrawChangedMenu(isHD, isFL, isTW, TWRate);
+        }
+        if (GetAsyncKeyState(VK_NUMPAD4) & 1) { //enable fl
+            patch((BYTE*)flAddress, (BYTE*)"\x55", 1, hProc);
+            isFL = false;
+            DrawChangedMenu(isHD, isFL, isTW, TWRate);
+        }
+       if (GetAsyncKeyState(VK_NUMPAD5) & 1) {
+           isTW = true;
+           DrawChangedMenu(isHD, isFL, isTW, TWRate);
+        }
+       if (GetAsyncKeyState(VK_NUMPAD6) & 1) {
+           isTW = false;
+           DrawChangedMenu(isHD, isFL, isTW, TWRate);
+           writeMem(TWaddr, 1.0, hProc);
+           writeMem(TWaddr + 0x8, 1147.0, hProc);
+       }
+       if (GetAsyncKeyState(0x39) & 1) {
+           system("CLS");
+           std::cout << "Enter timewarp rate: ";
+           std::cin >> TWRate;
+           DrawChangedMenu(isHD, isFL, isTW, TWRate);
+       }
+        if (GetAsyncKeyState(VK_NUMPAD9) & 1) { return 0; }
+    }
+
+    return 0;
 }
