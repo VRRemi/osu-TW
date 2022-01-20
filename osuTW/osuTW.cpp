@@ -34,6 +34,7 @@ int main()
     
     if (procID) {
         bassBase =GetModuleBaseAddress(procId, L"bass.dll");
+       hProc = 
     
     }
 
