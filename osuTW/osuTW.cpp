@@ -119,7 +119,6 @@ int main()
                      std::cin >> TWRate;
                      DrawChangedMenu(isHD, isFL, isTW, TWRate);
                 }
-    }
     
 
 }
