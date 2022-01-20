@@ -50,10 +50,10 @@ int main()
     hdApproach=findSig(hProc, sigs::hdApproach, "xx??x?xx");
     hdVisible=findSig(hProc, sigs::hdVisible, "x?x????x????xxxx");
     /*twAddr = findSig(hProc, sigs::twFunc, "xxxxxx????xxx?xxx??xx");
-        typedef void(__thiscall* _timewarp)(double value);
         _timewarp timewarp;
         timewarp = (_timewarp)(twAddr);*/
         
+    typedef void(__thiscall* _timewarp)(double value);
     system("CLS");
     std::cout << "osu tw and hdfl remover\n\n";
     std::cout << "Remove HD []\nRemove FL []\nTimewarp DISABLED ["<<TWRate<<"x]\n\n";
