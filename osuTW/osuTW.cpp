@@ -86,6 +86,7 @@ int main()
                             nop((BYTE*)(hdApproach+0x4), 2, hProc); 
                             isHD = true;
                             DrawChangedMenu(isHD, isFL, isTW, TWRate);
+                }
     }
     
 
