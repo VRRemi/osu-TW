@@ -81,6 +81,7 @@ int main()
                     writeMem(TWaddr + 0x8, 1147.0, hProc);
                 }
                 
+                if (GetAsyncKeyState(VK_NUMPAD1) & 1) { //disable hd
     }
     
 
