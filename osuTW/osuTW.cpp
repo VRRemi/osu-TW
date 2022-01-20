@@ -63,6 +63,7 @@ int main()
     while (true) {
         uintptr_t playerPtr = findDMAAddy(hProc, playerPtr1, { 0x0 });
                 uintptr_t audioBypass = playerPtr + 0x14C;
+                uintptr_t async = playerPtr + 0x182;
     }
     
 
