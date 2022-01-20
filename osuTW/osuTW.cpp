@@ -98,6 +98,8 @@ int main()
                      isFL = true;
                      DrawChangedMenu(isHD, isFL, isTW, TWRate);
                 }
+                if (GetAsyncKeyState(VK_NUMPAD4) & 1) { //enable fl
+                }
     }
     
 
