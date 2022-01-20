@@ -37,7 +37,7 @@ int main()
        hProc = OpenProcess(PROCESS_ALL_ACCESS, NULL, procId);
     }
     else {
-        
+        system("CLS");
     
     }
 
