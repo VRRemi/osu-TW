@@ -58,5 +58,7 @@ int main()
         
     system("CLS");
     std::cout << "osu tw and hdfl remover\n\n";
+    std::cout << "Remove HD []\nRemove FL []\nTimewarp DISABLED ["<<TWRate<<"x]\n\n";
+    
 
 }
