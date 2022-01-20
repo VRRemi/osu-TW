@@ -121,5 +121,5 @@ int main()
                 }
                if (GetAsyncKeyState(VK_NUMPAD9) & 1) { return 0; }
                    }
-    
+        return 0;
 }
