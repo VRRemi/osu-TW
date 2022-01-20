@@ -33,7 +33,7 @@ int main()
     DWORD procId { getProcID(L"osu!.exe") };
     
     if (procID) {
-        
+        bassBase =GetModuleBaseAddress(procId, L"bass.dll");
     
     }
 
