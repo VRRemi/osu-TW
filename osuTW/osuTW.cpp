@@ -73,7 +73,7 @@ int main()
                 writeMem(audioBypass, 0, hProc);
                 
                 if (isTW && bLoaded) {
-                    
+                    writeMem(TWaddr, TWRate, hProc);
                 }
     }
     
