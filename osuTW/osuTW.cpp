@@ -32,6 +32,9 @@ int main()
     uintptr_t bassBase{};
     DWORD procId { getProcID(L"osu!.exe") };
     
+    if (procID) {
+        
     
+    }
 
 }
