@@ -108,10 +108,10 @@ int main()
                      DrawChangedMenu(isHD, isFL, isTW, TWRate);
                 }
                 if (GetAsyncKeyState(VK_NUMPAD6) & 1) {
-                           isTW = false;
                            DrawChangedMenu(isHD, isFL, isTW, TWRate);
                            writeMem(TWaddr, 1.0, hProc);
                            writeMem(TWaddr + 0x8, 1147.0, hProc);
+                     isTW = false;
                 }
     }
     
