@@ -115,6 +115,7 @@ int main()
                 }
                 if (GetAsyncKeyState(0x39) & 1) {
                            system("CLS");
+                           std::cout << "Enter timewarp rate: ";
                 }
     }
     
