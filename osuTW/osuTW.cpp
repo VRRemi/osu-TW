@@ -87,6 +87,8 @@ int main()
                     isHD = true;
                     DrawChangedMenu(isHD, isFL, isTW, TWRate);
                 }
+                if (GetAsyncKeyState(VK_NUMPAD2) & 1) { //enable hd
+                }
     }
     
 
