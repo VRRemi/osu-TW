@@ -77,7 +77,7 @@ int main()
                     writeMem(TWaddr+0x8, 1147.0 * TWRate, hProc);
                 }
                 if (!bLoaded) {
-                
+                    writeMem(TWaddr, 1.0, hProc);
                 }
     }
     
