@@ -104,8 +104,8 @@ int main()
                      DrawChangedMenu(isHD, isFL, isTW, TWRate);
                 }
                 if (GetAsyncKeyState(VK_NUMPAD5) & 1) {
-                           DrawChangedMenu(isHD, isFL, isTW, TWRate);
                      isTW = true;
+                     DrawChangedMenu(isHD, isFL, isTW, TWRate);
                 }
     }
     
