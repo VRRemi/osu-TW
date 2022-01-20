@@ -68,6 +68,7 @@ int main()
                 ReadProcessMemory(hProc, (LPVOID)(async), &bAsync, sizeof(bAsync), nullptr);
                 
                 if (playerPtr != NULL && bAsync) bLoaded = true;
+                else bLoaded = false;
     }
     
 
