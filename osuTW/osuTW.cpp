@@ -42,6 +42,6 @@ int main()
         getchar();
         return 0;
     }
-    std::cout << "Initialzing Data...\n";
+    std::cout << "Initializing Data...\n";
 
 }
