@@ -96,6 +96,7 @@ int main()
                 if (GetAsyncKeyState(VK_NUMPAD3) & 1) { //disable fl
                             patch((BYTE*)flAddress, (BYTE*)"\xC3", 1, hProc);
                             isFL = true;
+                            DrawChangedMenu(isHD, isFL, isTW, TWRate);
                 }
     }
     
