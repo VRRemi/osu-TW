@@ -91,6 +91,7 @@ int main()
                             patch((BYTE*)hdVisible, (BYTE*)"\x75\x5F", 2, hProc);
                             patch((BYTE*)(hdApproach + 0x4), (BYTE*)"\x74\x10",2, hProc);
                             isHD = false;
+                            DrawChangedMenu(isHD, isFL, isTW, TWRate);
                 }
     }
     
