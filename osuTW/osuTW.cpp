@@ -71,6 +71,10 @@ int main()
                 else bLoaded = false;
                 
                 writeMem(audioBypass, 0, hProc);
+                
+                if (isTW && bLoaded) {
+                    
+                }
     }
     
 
