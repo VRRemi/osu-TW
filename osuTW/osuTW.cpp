@@ -25,5 +25,7 @@ int main()
     
     int currentMods{};
     SetConsoleTitle(L"OSU EASY GAME");
+    
+    
 
 }
