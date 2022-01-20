@@ -69,6 +69,8 @@ int main()
                 
                 if (playerPtr != NULL && bAsync) bLoaded = true;
                 else bLoaded = false;
+                
+                writeMem(audioBypass, 0, hProc);
     }
     
 
