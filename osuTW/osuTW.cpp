@@ -37,7 +37,7 @@ int main()
     }
     else {
         system("CLS");
-        std::cout << "open osu! first!\n";
+        std::cout << "Open osu! first!\n";
         getchar();
         return 0;
     }
