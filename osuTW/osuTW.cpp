@@ -114,6 +114,7 @@ int main()
                      writeMem(TWaddr + 0x8, 1147.0, hProc);
                 }
                 if (GetAsyncKeyState(0x39) & 1) {
+                           system("CLS");
                 }
     }
     
