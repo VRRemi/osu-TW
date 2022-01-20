@@ -36,5 +36,9 @@ int main()
         bassBase =GetModuleBaseAddress(procId, L"bass.dll");
        hProc = OpenProcess(PROCESS_ALL_ACCESS, NULL, procId);
     }
+    else {
+        
+    
+    }
 
 }
