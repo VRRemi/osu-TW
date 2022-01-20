@@ -66,6 +66,8 @@ int main()
                 uintptr_t async = playerPtr + 0x182;
                 uintptr_t TWaddr = findDMAAddy(hProc, bassBase+ 0x00034268, { 0x8,0x10,0xC,0x40 });
                 ReadProcessMemory(hProc, (LPVOID)(async), &bAsync, sizeof(bAsync), nullptr);
+                
+                if (playerPtr != NULL && bAsync) bLoaded = true;
     }
     
 
