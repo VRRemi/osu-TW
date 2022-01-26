@@ -63,3 +63,10 @@ void patch(BYTE* dst, BYTE* src, unsigned int size, HANDLE hProc) {
 	VirtualProtectEx(hProc, dst, size, oldProtect, &oldProtect);
 }
 
+void nop(BYTE* dst, unsigned int size, HANDLE hProc) {
+	BYTE* nopArr{ new BYTE[size] };
+	memset(nopArr, 0x90, size);
+	patch(dst, nopArr, size, hProc);
+	delete[] nopArr;
+}
+
