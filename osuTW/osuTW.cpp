@@ -43,4 +43,5 @@ int main()
     std::cout << "Initializing Data...\n";
     uintptr_t flAddress{}, hdApproach{}, hdVisible{}, playerOffsets{};
 
+    flAddress = findSig(hProc, sigs::loadFlashlight, "xxxxxxxxxxxxx?x????xxx?xxxx?xx?xx??x?x??x");
 }
