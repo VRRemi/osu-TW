@@ -57,3 +57,9 @@ uintptr_t findDMAAddy(HANDLE hProcess, uintptr_t pointer, std::vector<unsigned i
 }
 
 void patch(BYTE* dst, BYTE* src, unsigned int size, HANDLE hProc) {
+	DWORD oldProtect;
+	VirtualProtectEx(hProc, dst, size, PAGE_EXECUTE_READWRITE, &oldProtect);
+	WriteProcessMemory(hProc, dst, src, size, nullptr);
+	VirtualProtectEx(hProc, dst, size, oldProtect, &oldProtect);
+}
+
