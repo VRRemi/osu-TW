@@ -70,3 +70,8 @@ void nop(BYTE* dst, unsigned int size, HANDLE hProc) {
 	delete[] nopArr;
 }
 
+template <typename T>
+bool writeMem(unintptr_t address, T value, HANDLE hProcess) {
+	return WriteProcessMemory(hProcess, (LPVOID)(address), &value, sizeof(value), nullptr);
+}
+
