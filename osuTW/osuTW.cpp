@@ -26,4 +26,5 @@ int main()
 
     HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
     SetConsoleTextAttribute(hConsole, 14);
+    HANDLE hProc{ 0 };
 }
