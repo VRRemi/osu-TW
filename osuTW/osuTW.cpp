@@ -19,4 +19,6 @@ void DrawChangedMenu(bool isHD, bool isFL, bool isTW, double rate) {
 
 int main()
 {
+    bool isHD{ false }, isFL{ false }, isTW{ false }, bLoaded{ false }, bAsync{ false };
+
 }
