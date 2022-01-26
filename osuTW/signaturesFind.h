@@ -7,3 +7,6 @@ uintptr_t findSig(HANDLE hProc, const unsigned char pattern[], const char* mask)
 
 	unsigned char chunk[4096]{};
 
+	for (size_t i = 0x04000000; i < 0x7F000000; i += 4096 - signature_size) {
+		ReadProcessMemory(hProc, LPCVOID(i), &chunk, 4096, nullptr);
+
