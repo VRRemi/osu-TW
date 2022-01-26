@@ -76,3 +76,8 @@ bool writeMem(unintptr_t address, T value, HANDLE hProcess) {
 }
 
 template <typename N>
+N readMem(uintptr_t address, HANDLE hProcess) {
+	N value{};
+	ReadProcessMemory(hProcess, (LPVOID)(address), &value, sizeof(value), nullptr);
+	return value;
+}
