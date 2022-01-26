@@ -67,5 +67,10 @@ int main()
         else bLoaded = false;
 
         writeMem(audioBypass, 0, hProc);
+
+        if (isTW && bLoaded) {
+            writeMem(TWaddr, TWRate, hProc);
+            writeMem(TWaddr + 0x8, 1147.0 * TWRate, hProc);
+        }
     }
 }
