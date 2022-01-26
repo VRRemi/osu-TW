@@ -13,3 +13,9 @@ uintptr_t findSig(HANDLE hProc, const unsigned char pattern[], const char* mask)
 		for (size_t a = 0; a < 4096; a++) {
 			isFound = true;
 
+			for (size_t j = 0; j < signature_size && isFound; j++) {
+				if (mask[j] != '?' && chunk[a + j] != pattern[j]) {
+					isFound = false;
+				}
+			}
+
