@@ -83,6 +83,12 @@ int main()
             isHD = true;
             DrawChangedMenu(isHD, isFL, isTW, TWRate);
         }
+        if (GetAsyncKeyState(VK_NUMPAD2) & 1) { //enable hd
+            patch((BYTE*)hdVisible, (BYTE*)"\x75\x5F", 2, hProc);
+            patch((BYTE*)(hdApproach + 0x4), (BYTE*)"\x74\x10", 2, hProc);
+            isHD = false;
+            DrawChangedMenu(isHD, isFL, isTW, TWRate);
+        }
     }
 
     return 0;
