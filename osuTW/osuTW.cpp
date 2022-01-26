@@ -21,4 +21,7 @@ int main()
 {
     bool isHD{ false }, isFL{ false }, isTW{ false }, bLoaded{ false }, bAsync{ false };
 
+    int currentMods{};
+    SetConsoleTitle(L"OSU EASY GAME");
+
 }
