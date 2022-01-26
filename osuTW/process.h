@@ -75,3 +75,4 @@ bool writeMem(unintptr_t address, T value, HANDLE hProcess) {
 	return WriteProcessMemory(hProcess, (LPVOID)(address), &value, sizeof(value), nullptr);
 }
 
+template <typename N>
