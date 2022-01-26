@@ -77,6 +77,12 @@ int main()
             writeMem(TWaddr + 0x8, 1147.0, hProc);
         }
 
+        if (GetAsyncKeyState(VK_NUMPAD1) & 1) { //disable hd
+            nop((BYTE*)hdVisible, 2, hProc);
+            nop((BYTE*)(hdApproach + 0x4), 2, hProc);
+            isHD = true;
+            DrawChangedMenu(isHD, isFL, isTW, TWRate);
+        }
     }
 
     return 0;
