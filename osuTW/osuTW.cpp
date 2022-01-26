@@ -34,4 +34,11 @@ int main()
         bassBase = GetModuleBaseAddress(procId, L"bass.dll");
         hProc = OpenProcess(PROCESS_ALL_ACCESS, NULL, procId);
     }
+    else {
+        system("CLS");
+        std::cout << "Open osu! first!\n";
+        getchar();
+        return 0;
+    }
+
 }
