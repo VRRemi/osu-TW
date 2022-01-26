@@ -46,3 +46,14 @@ uintptr_t GetModuleBaseAddress(DWORD procId, const wchar_t* modName)
 	CloseHandle(hSnap);
 	return modBaseAddr;
 }
+
+uintptr_t findDMAAddy(HANDLE hProcess, uintptr_t pointer, std::vector<unsigned int> offsets) {
+	uintptr_t addr = pointer;
+	for (unsigned int i{ 0 }; i < offsets.size(); ++i) {
+		ReadProcessMemory(hProcess, (BYTE*)addr, &addr, sizeof(addr), nullptr);
+		addr += offsets[i];
+	}
+	return addr;
+}
+
+void patch(BYTE* dst, BYTE* src, unsigned int size, HANDLE hProc) {
