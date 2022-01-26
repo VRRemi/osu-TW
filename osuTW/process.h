@@ -22,3 +22,5 @@ DWORD getProcId(const wchar_t* procName) {
 	CloseHandle(hSnap);
 	return procId;
 }
+
+unintptr_t GetModuleBaseAddress(DWORD procId, const wchar_t* modName)
