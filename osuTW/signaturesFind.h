@@ -19,3 +19,11 @@ uintptr_t findSig(HANDLE hProc, const unsigned char pattern[], const char* mask)
 				}
 			}
 
+			if (isFound) {
+				return i + a;
+			}
+		}
+	}
+
+	return 0;
+}
