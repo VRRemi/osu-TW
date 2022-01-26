@@ -30,4 +30,8 @@ int main()
     uintptr_t bassBase{};
     DWORD procId{ getProcId(L"osu!.exe") };
 
+    if (procId) {
+        bassBase = GetModuleBaseAddress(procId, L"bass.dll");
+        hProc = OpenProcess(PROCESS_ALL_ACCESS, NULL, procId);
+    }
 }
