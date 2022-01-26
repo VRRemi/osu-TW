@@ -32,3 +32,5 @@
 *.app
 *.xml
 *.opendb
+*.db-wal
+*.sqlite
