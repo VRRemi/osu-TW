@@ -52,4 +52,5 @@ int main()
     typedef void(__thiscall* _timewarp)(double value);
     _timewarp timewarp;
     timewarp = (_timewarp)(twAddr);*/
+    system("CLS");
 }
