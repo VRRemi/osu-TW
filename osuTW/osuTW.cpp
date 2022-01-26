@@ -40,5 +40,7 @@ int main()
         getchar();
         return 0;
     }
+    std::cout << "Initializing Data...\n";
+    uintptr_t flAddress{}, hdApproach{}, hdVisible{}, playerOffsets{};
 
 }
