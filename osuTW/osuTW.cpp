@@ -12,5 +12,7 @@ void DrawChangedMenu(bool isHD, bool isFL, bool isTW, double rate) {
     std::cout << hd;
     std::string fl = (isFL) ? "Remove FL [o]\n" : "Remove FL []\n";
     std::cout << fl;
-    
+    if (isTW) std::cout << "Timewarp ENABLED [" << rate << "x]\n\n";
+    else std::cout << "Timewarp DISABLED [" << rate << "x]\n\n";
+    std::cout << "NUMPAD1 - DISABLE HD\nNUMPAD2 - ENABLE HD\nNUMPAD3 - DISABLE FL\nNUMPAD4 - ENABLE FL\nNUMPAD5 - ENABLE TW\nNUMPAD6 - DISABLE TW\nNUMPAD9 - PANIC KEY\n";
 }
