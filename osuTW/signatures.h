@@ -5,4 +5,5 @@ namespace sigs {
 	const unsigned char playerOffsets[] = { };
 	const unsigned char hdApproach[] = {  };
 	const unsigned char hdVisible[] = {  };
+	const unsigned char twFunc[] = {  };
 }
