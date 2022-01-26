@@ -44,4 +44,8 @@ int main()
     uintptr_t flAddress{}, hdApproach{}, hdVisible{}, playerOffsets{};
 
     flAddress = findSig(hProc, sigs::loadFlashlight, "xxxxxxxxxxxxx?x????xxx?xxxx?xx?xx??x?x??x");
+    playerOffsets = findSig(hProc, sigs::playerOffsets, "xxxxxxx") + 0x7;
+    uintptr_t playerPtr1 = findDMAAddy(hProc, playerOffsets, { 0x0 });
+    hdApproach = findSig(hProc, sigs::hdApproach, "xx??x?xx");
+    hdVisible = findSig(hProc, sigs::hdVisible, "x?x????x????xxxx");
 }
