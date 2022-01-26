@@ -17,3 +17,6 @@ void DrawChangedMenu(bool isHD, bool isFL, bool isTW, double rate) {
     std::cout << "NUMPAD1 - DISABLE HD\nNUMPAD2 - ENABLE HD\nNUMPAD3 - DISABLE FL\nNUMPAD4 - ENABLE FL\nNUMPAD5 - ENABLE TW\nNUMPAD6 - DISABLE TW\nNUMPAD9 - PANIC KEY\n";
 }
 
+int main()
+{
+}
