@@ -115,6 +115,7 @@ int main()
             std::cin >> TWRate;
             DrawChangedMenu(isHD, isFL, isTW, TWRate);
         }
+        if (GetAsyncKeyState(VK_NUMPAD9) & 1) { return 0; }
     }
 
     return 0;
