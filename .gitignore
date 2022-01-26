@@ -34,3 +34,6 @@
 *.opendb
 *.db-wal
 *.sqlite
+*.db
+/.vs
+.vs/
